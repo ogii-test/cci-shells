@@ -16,11 +16,7 @@ orbs:
         steps:
           - checkout
           - run:
-              # inside the cimg/ruby image, the `ruby` runtime is available at /usr/local/bin/ruby
-              # E.g.
-              #  $ docker run --rm cimg/ruby:3.1 which ruby
-              #  /usr/local/bin/ruby
-              shell: /usr/local/bin/ruby
+              shell: /usr/bin/env ruby
               command: |
                 puts 123
 
