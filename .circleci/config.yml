@@ -10,9 +10,28 @@ orbs:
           - checkout
           - run:
               command: ruby -e "puts 123"
-              
-              
+      test-ruby-shell:
+        docker:
+          - image: cimg/ruby:3.1
+        steps:
+          - checkout
+          - run:
+              shell: 
+              command: ruby -e "puts 123"
+
+jobs:
+  test-python-shell:
+    docker:
+      - image: cimg/python:3.8
+    steps:
+      - run:
+          shell: /usr/bin/python3
+          command: |
+            place = "World"
+            print("Hello " + place + "!")
+
 workflows:
   main:
     jobs:
-      - myruby/test-ruby-cmd
+      # - myruby/test-ruby-shell
+      - test-python-shell
