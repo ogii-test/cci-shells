@@ -2,19 +2,17 @@ version: 2.1
 
 orbs:
   myruby:
-    executors:
-      ruby-3.1:
-        docker:
-          - image: cimg/ruby:3.1
     jobs:
       test-ruby-cmd:
-        executor: ruby-3.1
+        docker:
+          - image: cimg/ruby:3.1
         steps:
           - checkout
           - run:
               command: ruby -e "puts 123"
       test-ruby-shell:
-        executor: ruby-3.1
+        docker:
+          - image: cimg/ruby:3.1
         steps:
           - checkout
           - run:
