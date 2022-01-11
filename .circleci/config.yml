@@ -16,9 +16,8 @@ orbs:
         steps:
           - checkout
           - run:
-              shell: /usr/bin/env irb
               command: |
-                puts 123
+                sh hello-ruby.sh
 
 jobs:
   test-python-shell:
