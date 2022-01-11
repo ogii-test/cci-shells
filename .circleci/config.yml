@@ -16,7 +16,7 @@ orbs:
         steps:
           - checkout
           - run:
-              shell: /usr/bin/env ruby
+              shell: /usr/bin/env irb
               command: |
                 puts 123
 
