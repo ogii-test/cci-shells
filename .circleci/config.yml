@@ -35,9 +35,8 @@ jobs:
           #sudo ln -s /usr/bin/nodejs /usr/local/bin/node
       - run:
           name: print FOO
-         # shell: '/usr/bin/env node --report-uncaught-exception'
+         shell: '/home/circleci/.nvm/versions/node/v17.9.0/bin node'
           command: |            
-            /usr/bin/env node -e `console.log('foo');
             console.log('foo');
             console.log('foo');
             console.log('foo');
