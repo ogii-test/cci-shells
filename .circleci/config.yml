@@ -1,37 +1,56 @@
 version: 2.1
 
-orbs:
-  myruby:
-    jobs:
-      test-ruby-cmd:
-        docker:
-          - image: cimg/ruby:3.1
-        steps:
-          - checkout
-          - run:
-              command: ruby -e "puts 123"
-      test-ruby-shell:
-        docker:
-          - image: cimg/ruby:3.1
-        steps:
-          - checkout
-          - run:
-              command: |
-                sh hello-ruby.sh
-
 jobs:
-  test-python-shell:
+  python:
+    environment:
+      FOO: bar
     docker:
-      - image: cimg/python:3.8
+      - image: cimg/python:3.9
     steps:
       - run:
-          shell: /usr/bin/python3
+          name: print FOO
+          shell: '/usr/bin/env python'
           command: |
-            place = "World"
-            print("Hello " + place + "!")
+            import os
+            print(os.environ["FOO"])
+  ruby:
+    environment:
+      FOO: bar
+    docker:
+      - image: cimg/ruby:2.7
+    steps:
+      - run:
+          name: print FOO
+          shell: '/usr/bin/env ruby'
+          command: |
+            puts ENV["FOO"]
+  node:
+    environment:
+      FOO: bar
+    docker:
+      - image: cimg/node:17.9
+    steps:
+      - run:
+          name: print FOO
+          shell: '/usr/bin/env node'
+          command: |
+            console.log(process.env.FOO);
+  bash:
+    environment:
+      FOO: bar
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: print FOO
+          shell: '/usr/bin/env bash'
+          command: |
+            printenv FOO
 
 workflows:
-  main:
+  taco-shells:
     jobs:
-      - myruby/test-ruby-shell
-      - test-python-shell
+      - ruby
+      - python
+      - bash
+      - node
