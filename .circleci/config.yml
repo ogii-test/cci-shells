@@ -35,12 +35,13 @@ jobs:
           #sudo ln -s /usr/bin/nodejs /usr/local/bin/node
       - run:
           name: print FOO
-         shell: '/home/circleci/.nvm/versions/node/v17.9.0/bin node'
+          shell: '/home/circleci/.nvm/versions/node/v17.9.0/bin node'
           command: |            
             console.log('foo');
             console.log('foo');
             console.log('foo');
-            console.log('foo');`
+            console.log('foo');
+            
 
   bash:
     environment:
