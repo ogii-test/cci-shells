@@ -37,7 +37,13 @@ jobs:
           name: print FOO
          # shell: '/usr/bin/env node --report-uncaught-exception'
           command: |
-            /usr/bin/env node -e "console.log('test');"
+            /usr/bin/env node
+            
+            console.log('foo');
+            console.log('foo');
+            console.log('foo');
+            console.log('foo');
+            console.log('foo');
 
   bash:
     environment:
