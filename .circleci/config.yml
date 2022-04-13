@@ -32,10 +32,10 @@ jobs:
     steps:
       - run: |
           source ~/.nvm/nvm.sh
-          sudo ln -s /usr/bin/nodejs /usr/local/bin/node
+          #sudo ln -s /usr/bin/nodejs /usr/local/bin/node
       - run:
           name: print FOO
-          shell: '/usr/bin/env node -e console.log("TEST");'
+          shell: '/usr/bin/env node --eval console.log("TEST");'
           command: |
             test
 
