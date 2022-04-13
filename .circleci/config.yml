@@ -35,9 +35,10 @@ jobs:
           #sudo ln -s /usr/bin/nodejs /usr/local/bin/node
       - run:
           name: print FOO
-          shell: '/usr/bin/env node --interactive'
+          #shell: '/usr/bin/env node --report-uncaught-exception'
           command: |
-            test
+            #!/usr/bin/env node --report-uncaught-exception
+            console.log("HEY")
 
   bash:
     environment:
