@@ -37,6 +37,7 @@ jobs:
           name: print FOO
           shell: '/usr/bin/env node -e console.log("TEST");'
           command: |
+            test
 
   bash:
     environment:
