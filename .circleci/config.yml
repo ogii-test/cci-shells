@@ -33,7 +33,7 @@ jobs:
       - run: |
           echo 'NODE_PATH="${HOME}/.node-script/lib/node_modules:${NODE_PATH}:$(npm root --q -g)"' >> $BASH_ENV
       - run:
-          shell: /usr/bin/env node
+          shell: /usr/bin/env/node
           name: print FOO
           command: |
             console.log('foo');
