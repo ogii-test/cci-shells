@@ -35,9 +35,8 @@ jobs:
           #sudo ln -s /usr/bin/nodejs /usr/local/bin/node
       - run:
           name: print FOO
-          shell: '/home/circleci/.nvm/versions/node/v17.9.0/bin/node -i'
+          shell: '/usr/bin/env node -i'
           command: |
-            import console=require('console');
             console.log('FOO');
 
   bash:
