@@ -35,7 +35,7 @@ jobs:
           sudo ln -s /usr/bin/nodejs /usr/local/bin/node
       - run:
           name: print FOO
-          shell: '/usr/bin/env node --not-interactive'
+          shell: '/usr/bin/env node -f'
           command: |
             console.log("TEST");
   bash:
