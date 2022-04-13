@@ -34,7 +34,7 @@ jobs:
           echo $HOME/.node_modules
       - run:
           name: print FOO
-          shell: /usr/bin/env node
+          shell: /usr/bin/env node -i
           
           command: |
             const { Console } = require('console');
