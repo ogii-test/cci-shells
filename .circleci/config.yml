@@ -35,7 +35,7 @@ jobs:
           #sudo ln -s /usr/bin/nodejs /usr/local/bin/node
       - run:
           name: print FOO
-          shell: '/usr/bin/env node --interactive
+          shell: '/usr/bin/env node --interactive'
           command: |
             test
 
