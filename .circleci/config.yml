@@ -36,7 +36,7 @@ jobs:
           name: print FOO
           shell: '/usr/bin/env node -i'
           command: |
-            node
+            node -i
             console.log('FOO');
 
   bash:
