@@ -35,7 +35,7 @@ jobs:
           sudo ln -s /usr/bin/nodejs /usr/local/bin/node
       - run:
           name: print FOO
-          shell: '/usr/bin/env node -e'
+          shell: '/usr/bin/env node -e console.log("TEST");'
           command: |
             console.log("TEST");
   bash:
