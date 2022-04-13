@@ -35,7 +35,7 @@ jobs:
           name: print FOO
           shell: '/usr/bin/env node'
           command: |
-            console.log(process.env.FOO);
+            console.log("TEST");
   bash:
     environment:
       FOO: bar
