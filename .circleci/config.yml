@@ -37,6 +37,7 @@ jobs:
           shell: /usr/bin/env node -i
           
           command: |
+            node -i
             const { Console } = require('console');
             console.log("HEY")
 
