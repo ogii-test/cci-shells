@@ -30,6 +30,7 @@ jobs:
     docker:
       - image: cimg/node:17.9
     steps:
+      - run: source ~/.nvm/nvm.sh
       - run:
           name: print FOO
           shell: '/usr/bin/env node'
