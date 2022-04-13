@@ -31,21 +31,12 @@ jobs:
       - image: cimg/node:17.9
     steps:
       - run: |
-          echo $HOME/.node_modules
+          echo 'NODE_PATH="${HOME}/.node-script/lib/node_modules:${NODE_PATH}:$(npm root --q -g)"' >> $BASH_ENV
       - run:
+          shell: /usr/bin/env node
           name: print FOO
           command: |
-            NODE_PATH="${HOME}/.node-script/lib/node_modules:${NODE_PATH}:$(npm root --q -g)"
-
-            node \<<'EOF'
-
-            (async () => {
-
-              console.log("foo")
-
-            })();
-
-            EOF
+            console.log('foo');
 
   bash:
     environment:
