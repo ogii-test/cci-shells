@@ -37,11 +37,7 @@ jobs:
           name: print FOO
           shell: '/home/circleci/.nvm/versions/node/v17.9.0/bin/node'
           command: |            
-            console.log('foo');
-            console.log('foo');
-            console.log('foo');
-            console.log('foo');
-            
+            5+5
 
   bash:
     environment:
